@@ -1,21 +1,21 @@
 import React from "react";
 import { Query } from "react-apollo";
 
-import Company from "./Company";
-import { GET_COMPANIES } from '../queries/company';
+import Project from "./Project";
+import { GET_PROJECTS } from '../queries/project';
 
-const CompanyList = () => (
+const ProjectList = () => (
   <div>
-    <h2>Companies</h2>
-    <Query query={GET_COMPANIES}>
+    <h2>Projects</h2>
+    <Query query={GET_PROJECTS}>
       {({ loading, error, data }) => {
         if (loading) return "Loading...";
         if (error) return `Error: ${error.message}`;
 
         return (
           <ul>
-            {data.companies.map(company => (
-              <Company key={company.id} data={company} />
+            {data.projects.map(project => (
+              <Project key={project.id} data={project} />
             ))}
           </ul>
         );
@@ -24,4 +24,4 @@ const CompanyList = () => (
   </div>
 );
 
-export default CompanyList;
+export default ProjectList;

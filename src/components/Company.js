@@ -1,11 +1,13 @@
-import React from 'react';
+import React from "react";
+import PropTypes from "prop-types";
 
 const Company = ({ data }) => {
-    const { id, title } = data;
-    return (
-        <li key={id}>{title}</li>
-    );
+  const { title } = data;
+  return <li>{title}</li>;
 };
 
+Company.propTypes = {
+  data: PropTypes.object
+};
 
 export default Company;
