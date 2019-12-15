@@ -1,47 +1,22 @@
 import React from "react";
 
-import ApolloClient from "apollo-boost";
-import { ApolloProvider } from "react-apollo";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Grid, Container, Header } from "semantic-ui-react";
 
-import Home from "./components/Home";
-import Navigation from "./components/Navigation";
-import NoMatch from "./components/NoMatch";
-import CompanyList from "./components/CompanyList";
-import EducationList from "./components/EducationList";
-import ProjectList from "./components/ProjectList";
-import SkillList from "./components/SkillList";
-
-const client = new ApolloClient({
-  uri: "http://localhost:4000"
-});
+import Navigation from "./components/Navigation/Navigation";
+import Routing from "./components/Routing";
 
 const App = () => (
-  <Router>
-    <ApolloProvider client={client}>
-      <Navigation />
-      <Switch>
-        <Route exact path='/'>
-          <Home />
-        </Route>
-        <Route path='/educations'>
-          <EducationList />
-        </Route>
-        <Route path='/companies'>
-          <CompanyList />
-        </Route>
-        <Route path='/projects'>
-          <ProjectList />
-        </Route>
-        <Route path='/skills'>
-          <SkillList />
-        </Route>
-        <Route path='*'>
-          <NoMatch />
-        </Route>
-      </Switch>
-    </ApolloProvider>
-  </Router>
+  <Container>
+    <Grid>
+      <Grid.Column width='4'>
+        <Header as='h2'>Mike Mols' CV</Header>
+        <Navigation />
+      </Grid.Column>
+      <Grid.Column width='12'>
+        <Routing />
+      </Grid.Column>
+    </Grid>
+  </Container>
 );
 
 export default App;

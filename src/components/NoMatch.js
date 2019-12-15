@@ -1,13 +1,12 @@
 import React from "react";
-import { Redirect, useLocation } from "react-router-dom";
+
+import { Segment } from "semantic-ui-react";
 
 const NoMatch = () => {
-  let location = useLocation();
-
   return (
-    <div>
+    <Segment>
       <h3>404</h3>
-    </div>
+    </Segment>
   );
 };
 
