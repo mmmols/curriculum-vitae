@@ -6,7 +6,7 @@ import * as serviceWorker from "./serviceWorker";
 
 import "semantic-ui-css/semantic.min.css";
 
-import { BrowserRouter as Router } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import { ApolloProvider } from "react-apollo";
 import ApolloClient from "apollo-boost";
 
@@ -18,11 +18,11 @@ const client = new ApolloClient({
 });
 
 ReactDOM.render(
-  <ApolloProvider client={client}>
-    <Router>
+  <BrowserRouter>
+    <ApolloProvider client={client}>
       <App />
-    </Router>
-  </ApolloProvider>,
+    </ApolloProvider>
+  </BrowserRouter>,
   document.getElementById("root")
 );
 

@@ -10,8 +10,8 @@ import "./index.scss";
 const SkillList = ({ segmented }) => (
   <Container>
     <Segment className={segmented ? "" : "display-none"}>
-      {" "}
       <Header as='h2'>Skills</Header>
+
       <Query query={GET_SKILLS}>
         {({ loading, error, data }) => {
           if (loading) return <Loader active inline='centered' />;

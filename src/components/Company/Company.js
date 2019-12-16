@@ -10,7 +10,7 @@ const Company = ({ data }) => {
     <Item>
       <Item.Image size='tiny' src={logo} />
       <Item.Content verticalAlign='middle'>
-        <Item.Header as='a'>{title}</Item.Header>
+        <Item.Header>{title}</Item.Header>
         <Item.Meta>
           {started_at} - {ended_at}
         </Item.Meta>

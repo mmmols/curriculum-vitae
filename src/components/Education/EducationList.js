@@ -1,6 +1,13 @@
 import React from "react";
 import { Query } from "react-apollo";
-import { Grid, Loader, Container, Header, Segment } from "semantic-ui-react";
+import {
+  Grid,
+  Loader,
+  Container,
+  Header,
+  Segment,
+  Accordion
+} from "semantic-ui-react";
 
 import Education from "./Education";
 import { GET_EDUCATIONS } from "../../queries/education";
@@ -16,9 +23,15 @@ const EducationList = ({ segmented }) => (
 
           return (
             <Grid.Row>
-              {data.educations.map(education => (
-                <Education key={education.id} data={education} />
-              ))}
+              <Accordion>
+                {data.educations.map((education, index) => (
+                  <Education
+                    key={education.id}
+                    data={education}
+                    index={index}
+                  />
+                ))}
+              </Accordion>
             </Grid.Row>
           );
         }}

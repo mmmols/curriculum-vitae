@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Menu } from "semantic-ui-react";
 
-import NavLink from "./NavLink";
+import { NavLink } from "react-router-dom";
 
 import "./index.scss";
 
@@ -19,6 +19,7 @@ class Navigation extends Component {
           name='home'
           active={activeItem === "home"}
           onClick={this.handleItemClick}
+          as='li'
         >
           <NavLink to='/'>CV</NavLink>
         </Menu.Item>
@@ -27,16 +28,16 @@ class Navigation extends Component {
           name='companies'
           active={activeItem === "companies"}
           onClick={this.handleItemClick}
+          as='li'
         >
-          <NavLink className='navigation__item__link' to='/companies'>
-            Companies
-          </NavLink>
+          <NavLink to='/companies'>Companies</NavLink>
         </Menu.Item>
 
         <Menu.Item
           name='educations'
           active={activeItem === "educations"}
           onClick={this.handleItemClick}
+          as='li'
         >
           <NavLink to='/educations'>Educations</NavLink>
         </Menu.Item>
@@ -45,6 +46,7 @@ class Navigation extends Component {
           name='skills'
           active={activeItem === "skills"}
           onClick={this.handleItemClick}
+          as='li'
         >
           <NavLink to='/skills'>Skills</NavLink>
         </Menu.Item>
@@ -53,6 +55,7 @@ class Navigation extends Component {
           name='projects'
           active={activeItem === "projects"}
           onClick={this.handleItemClick}
+          as='li'
         >
           <NavLink to='/projects'>Projects</NavLink>
         </Menu.Item>

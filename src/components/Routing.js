@@ -11,24 +11,12 @@ import SkillList from "./Skill/SkillList";
 
 const Routing = () => (
   <Switch>
-    <Route exact path='/'>
-      <Home />
-    </Route>
-    <Route exact path='/educations'>
-      <EducationList />
-    </Route>
-    <Route exact path='/companies'>
-      <CompanyList />
-    </Route>
-    <Route exact path='/projects'>
-      <ProjectList />
-    </Route>
-    <Route exact path='/skills'>
-      <SkillList />
-    </Route>
-    <Route path='*'>
-      <NoMatch />
-    </Route>
+    <Route exact path='/' component={Home} />>
+    <Route path='/educations' component={EducationList} />
+    <Route path='/companies' component={CompanyList} />
+    <Route path='/projects' component={ProjectList} />
+    <Route path='/skills' component={SkillList} />
+    <Route path='*' component={NoMatch} />
   </Switch>
 );
 

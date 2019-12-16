@@ -4,7 +4,13 @@ import { Query } from "react-apollo";
 import Project from "./Project";
 import { GET_PROJECTS } from "../../queries/project";
 
-import { Container, Header, Loader, Segment } from "semantic-ui-react";
+import {
+  Container,
+  Header,
+  Loader,
+  Segment,
+  Accordion
+} from "semantic-ui-react";
 
 const ProjectList = ({ segmented }) => (
   <Container>
@@ -16,11 +22,11 @@ const ProjectList = ({ segmented }) => (
           if (error) return `Error: ${error.message}`;
 
           return (
-            <ul>
-              {data.projects.map(project => (
-                <Project key={project.id} data={project} />
+            <Accordion>
+              {data.projects.map((project, index) => (
+                <Project key={project.id} data={project} index={index} />
               ))}
-            </ul>
+            </Accordion>
           );
         }}
       </Query>

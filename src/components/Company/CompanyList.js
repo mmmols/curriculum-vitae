@@ -2,8 +2,9 @@ import React from "react";
 import { Query } from "react-apollo";
 import { Container, Item, Header, Loader, Segment } from "semantic-ui-react";
 
-import Company from "./Company";
 import { GET_COMPANIES } from "../../queries/company";
+
+import Company from "./Company";
 
 export const CompanyList = ({ segmented }) => (
   <Container>
@@ -16,8 +17,8 @@ export const CompanyList = ({ segmented }) => (
 
           return (
             <Item.Group>
-              {data.companies.map(entity => (
-                <Company key={entity.id} data={entity} />
+              {data.companies.map(company => (
+                <Company key={company.id} data={company} />
               ))}
             </Item.Group>
           );
