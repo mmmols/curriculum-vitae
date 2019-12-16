@@ -11,10 +11,7 @@ import { ApolloProvider } from "react-apollo";
 import ApolloClient from "apollo-boost";
 
 const client = new ApolloClient({
-  uri:
-    process.env.NODE_ENV !== "producttion"
-      ? "http://localhost:4000"
-      : "https://mikemols-cv.herokuapp.com/"
+  uri: "https://mikemols-cv.herokuapp.com/"
 });
 
 ReactDOM.render(
